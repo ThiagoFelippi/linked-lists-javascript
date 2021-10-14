@@ -45,6 +45,23 @@ let counter = 0;
     }
   });
 
+  test("Should test addAfter function in stack linked list", () => {
+    const stackLinkedList = new StackLinkedList();
+
+    stackLinkedList.addEnd(10);
+    stackLinkedList.addEnd(20);
+    stackLinkedList.addEnd(30);
+
+    const elementInserted = 50;
+    stackLinkedList.addAfter(20, elementInserted);
+    const { element } = stackLinkedList.getElementAt(2);
+
+    if (element !== elementInserted) {
+      logInfo({ element, elementInserted });
+      throw new Error("element !== elementInserted");
+    }
+  });
+
   console.log(`\n > ${counter} tests passed <`);
 })();
 

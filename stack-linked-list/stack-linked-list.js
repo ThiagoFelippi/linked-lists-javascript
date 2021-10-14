@@ -33,6 +33,21 @@ class StackLinkedList {
     return node;
   }
 
+  addAfter(element, elementToAdd) {
+    const index = this.indexOf(element);
+    let elementToAddAfter = this.getElementAt(index);
+
+    let next = elementToAddAfter.next;
+
+    const node = new Node(elementToAdd);
+    node.prev = elementToAddAfter;
+    node.next = next;
+    elementToAddAfter.next = node;
+    next.prev = node;
+
+    this.#count++;
+  }
+
   addEnd(element) {
     const node = new Node(element);
     if (this.#count === 0) this.#head = node;
