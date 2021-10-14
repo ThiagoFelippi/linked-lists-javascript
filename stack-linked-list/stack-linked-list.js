@@ -20,8 +20,17 @@ class StackLinkedList {
       current = current.next;
     }
 
-    console.log(this.#head);
     return -1;
+  }
+
+  getElementAt(index) {
+    if (index < 0 || index > this.#count) return undefined;
+
+    let node = this.#head;
+    for (let i = 0; i < index && node; i++) {
+      node = node.next;
+    }
+    return node;
   }
 
   addEnd(element) {
