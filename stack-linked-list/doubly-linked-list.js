@@ -1,6 +1,6 @@
 const Node = require("./node-doubly-linked-list");
 
-class StackLinkedList {
+class DoublyLinkedList {
   #head;
   #count;
 
@@ -76,4 +76,4 @@ function defaultIsEqualFn(node1, node2) {
   return node1 === node2;
 }
 
-module.exports = StackLinkedList;
+module.exports = DoublyLinkedList;

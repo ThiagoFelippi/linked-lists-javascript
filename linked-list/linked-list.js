@@ -23,7 +23,7 @@ class LinkedList {
   indexOf(element) {
     let current = this.#head;
     for (let i = 0; i < this.#count; i++) {
-      if (this.isEqual(element, current)) {
+      if (this.isEqual(element, current.element)) {
         return i;
       }
 
